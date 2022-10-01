@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Header from '../components/header/Header'
 import styles from '../sass/Home.module.scss'
+import ChooseContinentSection from './home-sections/choose-continent-section/chooseContinentSection'
 import PlaneSection from './home-sections/plane-section/planeSection'
 import TravelTypesSection from './home-sections/travel-types-section/travelTypesSection'
 
@@ -19,6 +20,7 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <PlaneSection/>
         <TravelTypesSection/>
+        <ChooseContinentSection/>
       </main>
 
     </div>

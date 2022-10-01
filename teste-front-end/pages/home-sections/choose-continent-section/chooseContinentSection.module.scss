@@ -1,0 +1,18 @@
+.chooseContinentContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .textContainer{
+        h2{
+            text-align: center;
+            font-weight: bold;
+        }
+    }
+
+    .carouselContainer{
+        margin: 30px 0 ;
+        width: 60%;
+        
+    }
+}
