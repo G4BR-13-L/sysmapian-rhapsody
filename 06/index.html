@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/global.css">
+    <title>Questão 06</title>
+</head>
+
+<body>
+    <section>
+
+        <h1>
+            6 – Utilizando o seguinte objeto
+        </h1>
+        <code lang="javascript">
+            const user = {
+                name: "Roberto",
+                idade: "33",
+                formado: "Sim",
+                escolaridade: {
+                instituicao1: "UNIVERSIDADE MG, UNIVERSIDADE SP, UNIVERSIDADE PR,
+UNIVERSADE RS",
+                instituicao2: "Preencher essa informação",
+                },
+            }
+        </code>
+        <ol>
+            <li>Altere a propriedade instituição1 para um array de string utilizando o separador virgula</li>
+            <li>Adicione duas novas propriedade no objeto user: endereço e nacionalidade</li>
+        </ol>
+    </section>
+    <section>
+
+    </section>
+</body>
+
+<script>
+
+    let user = {
+        name: "Roberto",
+        idade: "33",
+        formado: "Sim",
+        escolaridade: {
+            instituicao1: "UNIVERSIDADE MG, UNIVERSIDADE SP, UNIVERSIDADE PR,UNIVERSADE RS",
+            instituicao2: "Preencher essa informação",
+        },
+    }
+
+    // Altere a propriedade instituição1 para um array de string utilizando o separador virgula
+    user.escolaridade.instituicao1 = user.escolaridade.instituicao1.split(',')
+    console.log(user.escolaridade.instituicao1)
+
+    // Adicione duas novas propriedade no objeto user: endereço e nacionalidade
+    user = { ...user, endereco: "Endereco", nacionalidade: "nacionalidade" };
+    console.log("Usuário com novas propriedades");
+    console.table(user)
+</script>
+
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/global.css">
+    <title>Questão 05</title>
+</head>
+
+<body>
+    <section>
+
+
+        <h1>
+            5 – Baseado no seguinte array: [10, 23, 43,44,56,12,35,77,23, 13, 31]
+        </h1>
+        <ol>
+            <li>Calcule a média e imprima no console</li>
+            <li>Remova os 5 elementos do array e imprima o total do array no console</li>
+            <li>Gere um novo array somente com números pares e imprima no console</li>
+            <li>Gere um novo array somente com números primos e imprima no console</li>
+            <li>Utilizando as funções de array crie 3 novos arrays separando pela letra inicial de cada fruta e imprima
+                no console</li>
+        </ol>
+    </section>
+    <section>
+
+    </section>
+</body>
+
+<script>
+
+    function getArray() {
+        return [10, 23, 43, 44, 56, 12, 35, 77, 23, 13, 31]
+    }
+
+
+    // 1 - Calcule a média e imprima no console
+    console.log('Média: ' + getArray().reduce((a, b) => a + b) / getArray().length)
+
+    // 2 - Remova os 5 elementos do array e imprima o total do array no console
+    // Novamente, remover os 5 primeiros ous os 5 ultimos?
+
+        // REMOVENDO OS 5 PRIMEIROS
+        console.log('Removendo 5 primeiros: ' + getArray().splice(5, 10).reduce((a,b) => a+b))
+
+        // REMOVENDO OS 5 ULTIMOS
+        console.log('Removendo 5 ultimos: ' + getArray().splice(0, 5).reduce((a,b) => a+b))
+    
+    // 3 - Gere um novo array somente com números pares e imprima no console
+    console.log('Somente pares: ' + getArray().filter(a => a % 2 == 0 ))
+
+
+    // 4 - Gere um novo array somente com números primos e imprima no console
+    function isPrimo(n){
+        // Ser divisivel por 2, elimina a possibilidade 
+        // de ser pirmo instantaneamente 
+        if ( n % 2 != 0  ){
+            for( let i = n - 1 ; i > 1 ; i-- ){
+                if ( n % i == 0 ){
+                    return false
+                }
+            }
+            return true
+        }else{
+            return false
+        }
+    }
+
+    let  array = getArray();
+    let onlyPrimos = [];
+    for( num in  array){
+        if( isPrimo(array[num]) ){
+            onlyPrimos.push(array[num]);
+        }
+    }
+    console.log( "numeros primos: "+ onlyPrimos )
+
+    // 5 - Utilizando as funções de array crie 3 novos arrays 
+    // separando pela letra inicial de cada fruta e imprima no console
+    // 
+    // questão do array de frutas
+</script>
+
+
+</html>
