@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/global.css">
+    <title>Questão 04 - Dificil</title>
+</head>
+
+<body>
+    <style>
+        div {
+            font-weight: bold;
+            font-size: 1.7rem;
+            border: 1px solid black;
+            padding: 10px;
+            min-width: 400px;
+            width: min-content;
+            min-height: 120px;
+            display: grid;
+            place-items: center;
+        }
+    </style>
+    <section>
+
+        <h1>
+            4 – Crie uma função para formatar um valor em moeda brasileira R$
+        </h1>
+        <h3>do jeito dificil💪</h3>
+
+    </section>
+    <section>
+        <h3>Digite um valor</h3>
+        <input type="number">
+        <button onclick="formatarMoeda()">Formatar</button>
+    </section>
+    <section>
+        <div>
+            <p class="resultado"></p>
+        </div>
+    </section>
+</body>
+
+<script>
+
+    function formatarMoeda() {
+        let input = document.querySelector('input')
+        let valor = input.value;
+        let model = Array.from(valor);
+        if (model.length <= 2 && model.length >= 0) {
+            model.unshift('00,')
+        } else if (model.length > 2) {
+            model.splice(model.length - 2, 0, ",")
+            for (let i = model.length - 6; i > 0; i -= 3) {
+                model.splice((i), 0, '.')
+            }
+        }
+        document.querySelector('p.resultado').innerHTML = `R$ ${model.join('')}`;
+    }
+
+</script>
+
+
+</html>

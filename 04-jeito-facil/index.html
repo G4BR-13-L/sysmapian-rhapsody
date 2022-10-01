@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/global.css">
+    <title>Questão 04 - Fácil</title>
+</head>
+
+<body>
+    <style>
+        div {
+            font-weight: bold;
+            font-size: 1.7rem;
+            border: 1px solid black;
+            padding: 10px;
+            min-width: 400px;
+            width: min-content;
+            min-height: 120px;
+            display: grid;
+            place-items: center;
+        }
+    </style>
+    <section>
+
+        <h1>
+            4 – Crie uma função para formatar um valor em moeda brasileira R$
+        </h1>
+        <h3>Do jeito facil🍰</h3>
+        
+    </section>
+    <section>
+        <h3>Digite um valor</h3>
+        <input type="number">
+        <button onclick="formatarMoeda()">Formatar</button>
+    </section>
+    <section>
+        <div style="border: 1px solid black; padding: 20px; min-width: 200px ;width: min-content">
+            <p class="resultado"></p>
+        </div>
+    </section>
+</body>
+
+<script>
+
+    function formatarMoeda(){
+        let input = document.querySelector('input') 
+        let valor = input.value; 
+        let real = Number(valor).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+        document.querySelector('p.resultado').innerHTML = real;
+        console.log(real)
+    }
+
+</script>
+
+
+</html>
