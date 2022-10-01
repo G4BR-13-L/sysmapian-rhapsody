@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/global.css">
+    <title>Questão 01</title>
+</head>
+
+<body>
+    <h1>
+        1 - Crie uma função que monitore o teclado e imprima no console somente as teclas: a, c, l, 1,2,3 quando
+        digitadas
+    </h1>
+    <section>
+        <h4>Histórico</h4>
+        <ul class="history-list"></ul>
+    </section>
+</body>
+
+<script>
+    /*1 - Crie uma função que monitore o teclado e 
+    imprima no console somente as teclas: a, c, l, 1,2,3 quando digitadas
+    */
+
+    function addToHistoryList(keyMap){
+        let li = document.createElement('li')
+        li.innerHTML = keyMap;
+        document.querySelector('ul.history-list').appendChild(li)
+    }
+    document.querySelector('body').addEventListener('keydown', function (event) {
+        let key = event.keyCode;
+        let keyMap = '';
+        switch (key) {
+            case 65:
+                console.log('a');
+                addToHistoryList('a');
+                break;
+            case 67:
+                console.log('c');
+                addToHistoryList('c');
+                break;
+            case 76:
+                console.log('l');
+                addToHistoryList('l');
+                break;
+            case 49:
+                console.log('1');
+                addToHistoryList('1');
+                break;
+            case 50:
+                console.log('2');
+                addToHistoryList('2');
+                break;
+            case 51:
+                console.log('3');
+                addToHistoryList('3');
+                break;
+        }
+    });
+
+    
+
+</script>
+
+</html>

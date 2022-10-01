@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/global.css">
+    <title>Questão 02</title>
+</head>
+
+<body>
+    <section>
+
+        <h1>
+            3 – Baseado no seguinte array ['Abacate', 'Abacaxi', 'Acai', 'Acerola', 'Amora', 'Araticum', 'Banana',
+            'Biriba', 'Cacau', 'Caja']
+        </h1>
+        <ol>
+            <li>Descubra o tamanho do array e imprima no console</li>
+            <li>Remova os 5 elementos do array e imprima no console</li>
+            <li>Adicione a fruta laranja antes da fruta cacau e imprima no console</li>
+            <li>E adicione mamão antes da fruta Araticum e imprima no console</li>
+            <li>Utilizando as funções de array crie 3 novos arrays separando pela letra inicial de cada fruta e
+                imprima no console</li>
+        </ol>
+    </section>
+    <section>
+
+    </section>
+</body>
+
+<script>
+
+    function getArray() {
+        return ['Abacate', 'Abacaxi', 'Acai', 'Acerola', 'Amora', 'Araticum', 'Banana', 'Biriba', 'Cacau', 'Caja']
+    }
+
+    // 1 - Descubra o tamanho do array e imprima no console
+    console.log('tamanho: ' + getArray().length); // easy 😎
+
+    //--------------------------------------------------------
+
+    // 2 - Remova os 5 elementos do array e imprima no console
+    // 5 primeiros elementos ou 5 ultimos????
+
+    // REMOVENDO OS 5 ULTIMOS
+    console.log(getArray().splice(5, 10))
+
+    // REMOVENDO OS 5 ULTIMOS
+    console.log(getArray().splice(0, 5))
+
+    //--------------------------------------------------------
+
+    // 3 - Adicione a fruta laranja antes da fruta cacau e imprima no console
+
+    let array = getArray();
+    array.splice(8, 0, "laranja")
+    console.log(array)
+
+    //--------------------------------------------------------
+    // 4 - E adicione mamão antes da fruta Araticum e imprima no console
+    array.splice(5, 0, "mamão")
+    console.log(array)
+
+    //--------------------------------------------------------
+    // 5 - Utilizando as funções de array crie 3 novos 
+    // arrays separando pela letra inicial de cada fruta e imprima no console
+
+    let contagemDeIniciais = 0;
+
+    // Convertendo todos os elementos para lowercase
+    for (fruta in array) {
+        array[fruta] = array[fruta].toLowerCase();
+    }
+
+    // Ordenando alfabeticamente
+    array.sort((a, b) => a.localeCompare(b));
+    console.log(array)
+
+    // Algoritmo de agrupamento
+    let arrays = [[]];
+    for (let i = 0; i < array.length - 1; i++) {
+        if (array[i].charAt(0) != array[i + 1].charAt(0)) {
+            let novoGrupo = [array[i + 1]]
+            arrays.push(novoGrupo)
+            contagemDeIniciais++;
+        } else {
+            arrays[contagemDeIniciais].push(array[i]);
+        }
+    }
+
+    // Resultado final
+    console.log(arrays)
+
+
+</script>
+
+
+</html>

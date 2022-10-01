@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/global.css">
+    <title>Questão 02</title>
+</head>
+
+<body>
+    <h1>
+        2 - cria uma função que formate uma data em um input seguindo a seguinte patern :
+        dd/mm/yyyy
+    </h1>
+    <section>
+        <h4>Formataçãod e data</h4>
+        <div>
+            <h4>Formatação com mascara</h4>
+            <input type="text" onkeypress="formatDate()">
+            <button onclick="formatDate()">Formatar</button>
+        </div>
+
+        <div>
+            <h4>Formatação com mascara</h4>
+            
+        </div>
+    </section>
+</body>
+
+<script>
+    /**
+    * 2 - cria uma função que formate uma 
+    * data em um input seguindo a seguinte patern :
+    * dd/mm/yyyy
+    */
+
+
+    function formatDate() {
+        let input = document.querySelector('input')
+        let dateSrtingFormated;
+        let arr = Array.from(input.value)
+        console.log(arr)
+        arr = arr.filter(c => {
+            if ((c != '_' && c != '/') && (Number(c) >= 0 && Number(c) <= 9)) {
+                return c;
+            }
+        })
+        console.log(arr)
+
+        switch (arr.length) {
+            case 1:
+                dateSrtingFormated = `${arr[0]}_/__/____`;
+                break;
+            case 2:
+                dateSrtingFormated = `${arr[0]}${arr[1]}/__/____`;
+                break;
+            case 3:
+                dateSrtingFormated = `${arr[0]}${arr[1]}/${arr[2]}_/____`;
+                break;
+            case 4:
+                dateSrtingFormated = `${arr[0]}${arr[1]}/${arr[2]}${arr[3]}/____`;
+                break;
+            case 5:
+                dateSrtingFormated = `${arr[0]}${arr[1]}/${arr[2]}${arr[3]}/${arr[4]}___`;
+                break;
+            case 6:
+                dateSrtingFormated = `${arr[0]}${arr[1]}/${arr[2]}${arr[3]}/${arr[4]}${arr[5]}__`;
+                break;
+            case 7:
+                dateSrtingFormated = `${arr[0]}${arr[1]}/${arr[2]}${arr[3]}/${arr[4]}${arr[5]}${arr[6]}_`;
+                break;
+            case 8:
+                dateSrtingFormated = `${arr[0]}${arr[1]}/${arr[2]}${arr[3]}/${arr[4]}${arr[5]}${arr[6]}${arr[7]}`;
+                break;
+            default:
+                dateSrtingFormated = `${arr[0]}${arr[1]}/${arr[2]}${arr[3]}/${arr[4]}${arr[5]}${arr[6]}${arr[7]}`;
+                break;
+        }
+        input.value = dateSrtingFormated;
+
+
+    }
+
+
+
+
+
+
+
+</script>
+
+
+</html>
