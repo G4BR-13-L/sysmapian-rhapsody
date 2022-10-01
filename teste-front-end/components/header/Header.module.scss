@@ -1,0 +1,17 @@
+.headerContainer{
+    background-color: #f5f8fa;
+    height: 80px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    .logoContainer{
+        width: 160px;
+        display: grid;
+        place-items: center;
+ 
+        .image{
+            height: 100%;
+        }
+        
+    }
+}

@@ -1,0 +1,30 @@
+.backgroundContainer{
+    background-image: url('../../../assets/img/Background.png');
+    background-color: red;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 330px;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    margin: 0 auto;
+    place-items: center;
+    
+    padding: 40px;
+    
+    .titleTextContainer{
+        color: white;
+        h1{
+            font-size: 3rem;
+        }
+        h4{
+            font-size:1rem;
+        }
+    }
+    .imageContainer{
+        transform: translateY(80px);
+        img{
+
+        }
+    }
+}
