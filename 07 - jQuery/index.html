@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+    <title>Questão 07 Utilizando jQuery</title>
+</head>
+
+<body>
+    <form action="" method="post">
+        <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" />
+        </div>
+        <div>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" />
+        </div>
+        <div>
+            <label for="salario">Salário:</label>
+            <input type="text" id="salario"></input>
+        </div>
+        <div>
+            <label for="msg">Mensagem:</label>
+            <textarea id="msg"></textarea>
+        </div>
+        <div>
+            <label for="msg">alertar:</label>
+            <input type="checkbox" name="alertar" checked id="alert">
+        </div>
+        <div>
+            <label for="msg">Enviar:</label>
+            <input type="button" name="alertar" value="Enviar" id="send">
+        </div>
+    </form>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+
+<script>
+
+    // 1 – Crie uma função que ao clicar no botão enviar imprima no console os valores dos seguintes inputs: Nome, E-mail e enviar
+
+    $('#send').click(function () {
+        let dados = {
+            nome: $('#nome').val(),
+            email: $('#email').val(),
+            enviar: $('#send').val(),
+        }
+        console.table(dados);
+    });
+
+    // 2 – crie uma função que verifique o checkbox : alertar caso esteja checado imprima no console o usuário deve ser alertado caso não deve imprimir o usuário não deseja ser alertado:
+
+    $('#alert').change(function () {
+        this.checked ? console.log("o usuário deve ser alertado")
+            : console.log("o usuário não deseja ser alertado")
+    });
+
+    // 3 – Crie uma função que que ao clicar no botão enviar valide os inputs caso os mesmo estejam vazios a cor borda do input deve ficar vermelha 
+
+
+    $('form').click(function (e) {
+        var camposVazios = $(this).find("input, select, textarea")
+            .each(function () {
+                if ($(this).val() == "" || $(this).val() == null) {
+                    $(this).css({ 'border-color': 'red' })
+                } else {
+                    $(this).css({ 'border-color': 'black' })
+                }
+            })
+    });
+
+    // 4 – Codifique um script que caso o campo salário não seja preenchido o botão enviar deve ser desabilitado
+
+    $('#salario').change(function (){
+        if( $(this).val() == "" || $(this).val() == null){
+            $('#send').prop("disabled",true);
+        }else{
+            $('#send').prop("disabled",false);
+
+        }
+    })
+    
+
+
+    // 5 – crie uma função que crie uma máscara monetária(R$) para salario
+    
+    $('#salario').change(function () {
+        console.log("Função chamada")
+        let value = $(this).val();
+        value = value.replace(/\D/g, "");
+        value = value.replace(/(\d)(\d{2})$/, "$1,$2");
+        value = value.replace(/(?=(\d{3})+(\D))\B/g, ".");
+        $(this).val(value)
+    })
+
+</script>
+
+</html>
