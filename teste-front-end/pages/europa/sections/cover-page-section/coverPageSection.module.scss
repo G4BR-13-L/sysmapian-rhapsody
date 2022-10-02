@@ -1,0 +1,27 @@
+.coverContainer{
+    position: relative;
+    max-height: 450px;
+    background-color: red;
+    overflow: hidden;
+    .imageContainer{
+        z-index: 5;
+        width: 100%;
+        .image{
+            width: 100%;
+            object-fit: cover;
+            align-self: baseline;
+           
+        }
+    }
+    .captionContainer{
+        position: absolute;
+        
+        z-index: 10;
+        bottom: 0;
+        margin: 20px 80px;
+        h2{
+            font-size: 3rem;
+            color: white;
+        }
+    }
+}

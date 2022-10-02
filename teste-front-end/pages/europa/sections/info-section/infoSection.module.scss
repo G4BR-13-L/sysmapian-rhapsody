@@ -1,0 +1,39 @@
+.infoSectionContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    padding: 40px;
+    .descriptionContainer{
+        p{
+            font-size: 1.5rem;
+            text-align: justify;
+            color:#555;
+        }
+    }
+    .numberContainer{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        ul{
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            text-align: center;
+            li{
+                span{
+                    color: rgb(255, 209, 6);
+                    font-size: 2.5rem;
+                    font-weight: bolder;
+                    
+                }
+                p{
+                    margin-top: -5px;
+                    font-size: 1.2rem;
+                    color: #333;
+                }
+            }
+        }
+    }
+
+}
