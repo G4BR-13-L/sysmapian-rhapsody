@@ -67,6 +67,7 @@ localhost:3000
 
 #### Capturas de Tela da aplicação final
 <div style="
+    width:100%;
     display:grid;
     grid-template-columns: 1fr 1fr;
     grid-gap:10px;
